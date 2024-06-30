@@ -52,8 +52,6 @@ function playRound(humanChoice, computerChoice){
         }
     }
 
-    
-    // console.log(humanChoice, computerChoice)
 }
 
 // This funciton chooses between ROCK PAPER & SCISSOR by a random_num arg
@@ -94,17 +92,5 @@ function playGame(){
     console.log(`You ${humanScore} : Computer ${computerScore}`)
 }
 
-
-
-
-// getComputerChoice(Math.floor(Math.random() * 3))
-
-
-
-
-
-
-
-// getHumanChoice()
 
 playGame()
