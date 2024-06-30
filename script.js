@@ -2,6 +2,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 
+// This function handles the logic behind the ROCK PAPER SCISSOR
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
@@ -52,10 +53,10 @@ function playRound(humanChoice, computerChoice){
     }
 
     
-    console.log(`You ${humanScore} : Computer ${computerScore}`)
     // console.log(humanChoice, computerChoice)
 }
 
+// This funciton chooses between ROCK PAPER & SCISSOR by a random_num arg
 function getComputerChoice(random_num){
     if (random_num === 0){
         // console.log('Rock');
@@ -74,12 +75,14 @@ function getComputerChoice(random_num){
     
 }
 
+// Prompts the user to choose ROCK PAPER SCISSOR
 function getHumanChoice(){
     let human_choice = prompt('Whats your choice, Human?')
     // console.log(human_choice)
     return human_choice;
 }
 
+// Calls playRound() 5 times and console logs the Score
 function playGame(){
     for(let i = 0; i < 5; i++){
         humanSelection = getHumanChoice();
