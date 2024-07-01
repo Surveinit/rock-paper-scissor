@@ -7,7 +7,7 @@ function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
-    // If human chooses ROCk
+
     if (humanChoice === 'rock'){
         if (computerChoice === 'rock'){
             console.log(`You DRAW as you chose ${humanChoice} and computer chose ${computerChoice}`)
@@ -22,7 +22,7 @@ function playRound(humanChoice, computerChoice){
         }
     }
 
-    // If human chooses PAPER
+
     if (humanChoice === 'paper'){
         if (computerChoice === 'rock'){
             console.log(`You WIN as you chose ${humanChoice} and computer chose ${computerChoice}`)
@@ -37,7 +37,7 @@ function playRound(humanChoice, computerChoice){
         }
     }
 
-    // If human chooses SCISSOR
+
     if (humanChoice === 'scissor'){
         if (computerChoice === 'rock'){
             console.log(`You LOSE as you chose ${humanChoice} and computer chose ${computerChoice}`)
@@ -54,33 +54,29 @@ function playRound(humanChoice, computerChoice){
 
 }
 
-// This funciton chooses between ROCK PAPER & SCISSOR by a random_num arg
+
 function getComputerChoice(random_num){
     if (random_num === 0){
-        // console.log('Rock');
         return 'Rock';
     }
     
     if (random_num === 1){
-        // console.log('Paper');
         return 'Paper';
     }
 
     if (random_num === 2){
-        // console.log('Scissor');
         return 'Scissor';
     }
     
 }
 
-// Prompts the user to choose ROCK PAPER SCISSOR
+
 function getHumanChoice(){
     let human_choice = prompt('Whats your choice, Human?')
-    // console.log(human_choice)
     return human_choice;
 }
 
-// Calls playRound() 5 times and console logs the Score
+// Because we have 5 rounds
 function playGame(){
     for(let i = 0; i < 5; i++){
         humanSelection = getHumanChoice();
