@@ -78,12 +78,10 @@ function getHumanChoice(){
 
 // Because we have 5 rounds
 function playGame(){
-    for(let i = 0; i < 5; i++){
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice(Math.floor(Math.random() * 3));
+    // humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice(Math.floor(Math.random() * 3));
 
-        playRound(humanSelection, computerSelection);
-    }
+    playRound(humanSelection, computerSelection);
 
     console.log(`You ${humanScore} : Computer ${computerScore}`)
 }
