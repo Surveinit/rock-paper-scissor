@@ -10,14 +10,14 @@ function playRound(humanChoice, computerChoice){
 
     if (humanChoice === 'rock'){
         if (computerChoice === 'rock'){
-            console.log(`You DRAW as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
         }
         if (computerChoice === 'paper'){
-            console.log(`You LOSE as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             computerScore += 1;
         }
         if (computerChoice === 'scissor'){
-            console.log(`You WIN as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             humanScore += 1
         }
     }
@@ -83,15 +83,18 @@ function playGame(human_choice){
 
     playRound(humanSelection, computerSelection);
 
-    console.log(`You ${humanScore} : Computer ${computerScore}`)
+    // console.log(`You ${humanScore} : Computer ${computerScore}`)
 }
 
 
+const container = document.querySelector(".container")
 const rockButton = document.querySelector(".rockBtn");
 const paperButton = document.querySelector(".paperBtn");
 const scissorButton = document.querySelector(".scissorBtn");
+const runningScore = document.querySelector(".runningScore");
 
 rockButton.addEventListener("click", () => playGame('rock')); 
 paperButton.addEventListener("click", () => playGame('paper')); 
 scissorButton.addEventListener("click", () => playGame('scissor')); 
 
+console.log(`You ${humanScore} : Computer ${computerScore}`)
