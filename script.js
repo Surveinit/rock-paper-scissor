@@ -76,9 +76,9 @@ function getHumanChoice(){
     return human_choice;
 }
 
-// Because we have 5 rounds
-function playGame(){
-    // humanSelection = getHumanChoice();
+
+function playGame(human_choice){
+    humanSelection = human_choice;
     computerSelection = getComputerChoice(Math.floor(Math.random() * 3));
 
     playRound(humanSelection, computerSelection);
@@ -87,4 +87,11 @@ function playGame(){
 }
 
 
-playGame()
+const rockButton = document.querySelector(".rockBtn");
+const paperButton = document.querySelector(".paperBtn");
+const scissorButton = document.querySelector(".scissorBtn");
+
+rockButton.addEventListener("click", () => playGame('rock')); 
+paperButton.addEventListener("click", () => playGame('paper')); 
+scissorButton.addEventListener("click", () => playGame('scissor')); 
+
