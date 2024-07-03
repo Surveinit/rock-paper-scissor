@@ -25,14 +25,14 @@ function playRound(humanChoice, computerChoice){
 
     if (humanChoice === 'paper'){
         if (computerChoice === 'rock'){
-            console.log(`You WIN as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             humanScore += 1
         }
         if (computerChoice === 'paper'){
-            console.log(`You DRAW as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
         }
         if (computerChoice === 'scissor'){
-            console.log(`You LOSE as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             computerScore += 1
         }
     }
@@ -40,15 +40,15 @@ function playRound(humanChoice, computerChoice){
 
     if (humanChoice === 'scissor'){
         if (computerChoice === 'rock'){
-            console.log(`You LOSE as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             computerScore += 1
         }
         if (computerChoice === 'paper'){
-            console.log(`You WIN as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
             humanScore += 1
         }
         if (computerChoice === 'scissor'){
-            console.log(`You DRAW as you chose ${humanChoice} and computer chose ${computerChoice}`)
+            runningScore.textContent = `You ${humanScore} : Computer ${computerScore}`;
         }
     }
 
@@ -83,7 +83,16 @@ function playGame(human_choice){
 
     playRound(humanSelection, computerSelection);
 
-    // console.log(`You ${humanScore} : Computer ${computerScore}`)
+    if (humanScore >= 5 || computerScore >= 5){
+        if (humanScore > computerScore){
+            runningScore.textContent = `You won with ${humanScore} points.`;
+
+        }
+        else{
+            runningScore.textContent = `Computer won with ${computerScore} points.`; 
+        }
+    }
+
 }
 
 
@@ -96,5 +105,3 @@ const runningScore = document.querySelector(".runningScore");
 rockButton.addEventListener("click", () => playGame('rock')); 
 paperButton.addEventListener("click", () => playGame('paper')); 
 scissorButton.addEventListener("click", () => playGame('scissor')); 
-
-console.log(`You ${humanScore} : Computer ${computerScore}`)
